@@ -1,27 +1,72 @@
 document.addEventListener("DOMContentLoaded", function() {
-
+    // Smooth scrolling for navigation links
     const menuItems = document.querySelectorAll("nav ul li a");
     
     menuItems.forEach(item => {
         item.addEventListener("click", function(event) {
             event.preventDefault();
-            document.querySelector(item.getAttribute("href")).scrollIntoView({
-                behavior: "smooth"
-            });
+            const targetId = item.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
         });
     });
 
+    // Pricing cards hover effects
     const pricingCards = document.querySelectorAll(".pricing-card");
     
     pricingCards.forEach(card => {
         card.addEventListener("mouseover", function() {
-            card.style.transform = "scale(1.05)";
-            card.style.transition = "0.3s ease-in-out";
+            if (window.innerWidth > 768) {
+                card.style.transform = "scale(1.05)";
+                card.style.transition = "0.3s ease-in-out";
+            }
         });
         card.addEventListener("mouseout", function() {
-            card.style.transform = "scale(1)";
+            if (window.innerWidth > 768) {
+                card.style.transform = "scale(1)";
+            }
         });
     });
+});
+
+// Mobile menu functions
+function toggleMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-nav');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    mobileMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-nav');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    mobileMenu.classList.remove('active');
+    menuToggle.classList.remove('active');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.querySelector('.mobile-nav');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        mobileMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        closeMobileMenu();
+    }
 });
 // read more
 function toggleText() {

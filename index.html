@@ -11,7 +11,7 @@
         <div class="logo">
             <img src="./img/LOGO.png" alt="LeadConveer">
         </div>
-        <nav>
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="#how-it-works">Как это работает</a></li>
                 <li><a href="#pricing">Цена</a></li>
@@ -20,10 +20,28 @@
             </ul>
         </nav>
         <div class="contact">
-            <a href="#"><img src="./img/whatsapp.png    " alt="WhatsApp"></a>
+            <a href="#"><img src="./img/whatsapp.png" alt="WhatsApp"></a>
             <a href="#"><img src="./img/telegram.png" alt="Telegram"></a>
-            <a href="tel:+74951183282">+7 495 118-32-82</a>
+            <a href="tel:+74951183282" class="phone-link">+7 495 118-32-82</a>
         </div>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#how-it-works" onclick="closeMobileMenu()">Как это работает</a></li>
+                <li><a href="#pricing" onclick="closeMobileMenu()">Цена</a></li>
+                <li><a href="#reviews" onclick="closeMobileMenu()">Отзывы</a></li>
+                <li><a href="#contacts" onclick="closeMobileMenu()">Контакты</a></li>
+            </ul>
+            <div class="mobile-contact">
+                <a href="#"><img src="./img/whatsapp.png" alt="WhatsApp"></a>
+                <a href="#"><img src="./img/telegram.png" alt="Telegram"></a>
+                <a href="tel:+74951183282">+7 495 118-32-82</a>
+            </div>
+        </nav>
     </header>
     <script src="script.js"></script>
 
@@ -471,31 +489,27 @@
 
 
 <!-- why we better -->
-<div class="container">
-    <h1>Почему лучше <br><span style="color: #FF6600;">заказать Лидов у нас</span></h1>
-    <p>Лидогенерация — это стабильное получение клиентов <br>и выполнение плана по продажам!</p>
-    
-    <div class="benefits">
-        <div class="benefit">
-            <h3>01</h3> 
-            <!-- <img src="./img/Star 2.png" alt=""> -->
-            
-            <p>Только качественные Лиды. Мы идентифицируем только тех посетителей, которым интересна ваша услуга и из вашего города.</p>
-            
-        </div>
-        <div class="benefit">
-            <h3>02</h3>
-            <p>Доступная цена и отсутствие минимального порога. У нас отсутствует минимальная плата за сервис, подписка и т.п. Вы покупаете столько Лидов — сколько хотите!</p>
-        </div>
-        <div class="benefit">
-            <h3>03</h3>
-            <p>Техническая поддержка и комплекс услуг. Мы работаем для вас 24/7!</p>
-        </div>
-    </div>
-
-    <div class="source">
+<section class="why-better-section">
+    <div class="container">
+        <h1>Почему лучше <br><span style="color: #FF6600;">заказать Лидов у нас</span></h1>
+        <p>Лидогенерация — это стабильное получение клиентов <br>и выполнение плана по продажам!</p>
         
-       
+        <div class="benefits">
+            <div class="benefit">
+                <h3>01</h3>
+                <p>Только качественные Лиды. Мы идентифицируем только тех посетителей, которым интересна ваша услуга и из вашего города.</p>
+            </div>
+            <div class="benefit">
+                <h3>02</h3>
+                <p>Доступная цена и отсутствие минимального порога. У нас отсутствует минимальная плата за сервис, подписка и т.п. Вы покупаете столько Лидов — сколько хотите!</p>
+            </div>
+            <div class="benefit">
+                <h3>03</h3>
+                <p>Техническая поддержка и комплекс услуг. Мы работаем для вас 24/7!</p>
+            </div>
+        </div>
+
+        <div class="source">
             <div class="source_text">
                 <img src="./img/lightning.png" alt="">
                 <h3>Источник Лидов:</h3>
@@ -525,9 +539,9 @@
                 <h3>Быстро</h3>
                 <p>Быстро: запуск и получение первых Лидов обычно занимает 5–7 дней, а добавление проекта в систему менее 1 часа.</p>
             </div> 
-            </ul>
+        </div>
     </div>
-</div>
+</section>
 <!-- second_registration -->
 
 <div class="second_registration-block">
